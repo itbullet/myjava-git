@@ -15,6 +15,8 @@ public class MainClass {
         fillArray();
         //вызываем метод multiplyBy2Less6
         multiplyBy2Less6();
+        //вызываем метод fillDiagWith1
+        fillDiagWith1();
     }
     //Задание 1: создаем метод substituteArray
     public static void substituteArray () {
@@ -56,8 +58,23 @@ public class MainClass {
             if(arr[i] < 6) {
                 arr[i] *= 6;
             }
+        }
         //выводим массив arr в консоль после цикла
         System.out.println(Arrays.toString(arr));
+    }
+    //Задание 4: создаем метод fillDiagWith1
+    public static void fillDiagWith1 () {
+        //созадем двухмерный массив arr размером 7х7
+        int[][] arr = new int[7][7];
+        System.out.println("Задание 4:");
+        //Циклом пробегаемся по всем ячейкам массива, в диагональные ячейки проставляем 1 и выводим массив построчно
+        for (int i = 0; i < 7; i++) {
+            arr[i][i] = 1;
+            arr[i][arr.length-1-i] = 1;
+            for (int j = 0; j < 7; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
