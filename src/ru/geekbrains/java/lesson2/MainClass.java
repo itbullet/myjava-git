@@ -17,6 +17,8 @@ public class MainClass {
         multiplyBy2Less6();
         //вызываем метод fillDiagWith1
         fillDiagWith1();
+        //вызываем метод findMaxMin
+        findMaxMin();
     }
     //Задание 1: создаем метод substituteArray
     public static void substituteArray () {
@@ -76,5 +78,28 @@ public class MainClass {
             }
             System.out.println();
         }
+    }
+    //Задание 5: создаем метод findMaxMin - поиск минимального и максимального элемента в массиве
+    public static void findMaxMin () {
+        //задаем одномерный массив arr
+        int arr[] = { 2, 5, 6, 1, 9, 20, 3, 8, 0, 21};
+        //задаем переменным min и max первичные значения равные первой ячейке массива arr
+        int min = arr[0], max = arr[0];
+        /*с помощью цикла перебираем массив arr и в случае если значение ячейки больше значения max
+        или меньше значения min заменяем их
+         */
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] < min) {
+                min = arr[i];
+            } else if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        //Выводим массив arr
+        System.out.println("Задание 5:\n" + Arrays.toString(arr));
+        //выводим максимальное значение
+        System.out.println("Максимальное число: " + max);
+        //выводим минимальное значение
+        System.out.println("Минимальное число: " + min);
     }
 }
