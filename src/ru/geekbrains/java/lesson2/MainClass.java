@@ -1,5 +1,6 @@
 package ru.geekbrains.java.lesson2;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import sun.plugin.javascript.navig.Array;
 
 import java.util.Arrays;
@@ -9,6 +10,8 @@ import java.util.Arrays;
  */
 public class MainClass {
     public static void main(String[] args) {
+        //создаем массив arr1 для использования его в методе
+        int arr1[] = { 2, 10, 1, 3, 14, 2};
         //вызываем метод substituteArray
         substituteArray();
         //вызываем метод fillArray
@@ -19,6 +22,8 @@ public class MainClass {
         fillDiagWith1();
         //вызываем метод findMaxMin
         findMaxMin();
+        //выводим значение метода chkArrBlnc
+        System.out.println("\n" + chkArrBalance(arr1));
     }
     //Задание 1: создаем метод substituteArray
     public static void substituteArray () {
@@ -101,5 +106,64 @@ public class MainClass {
         System.out.println("Максимальное число: " + max);
         //выводим минимальное значение
         System.out.println("Минимальное число: " + min);
+    }
+    //Задание 6: создаем метод chkArrBlnc
+    public static boolean chkArrBalance(int[] arr) {
+        /* создаем переменные sumLeft для хранения суммы ячеек слева,
+        sumRight для хранения суммы ячеек справа, chkEven для хранения суммы всех ячеек,
+        left для перебора ячеек слева и right для перебора ячеек справа
+         */
+        int sumLeft = 0, sumRight = 0, chkEven = 0, left = 0, right = arr.length-1;
+        //суммируем все ячейки в массиве arr
+        for (int i = 0; i < arr.length; i++) {
+            chkEven += arr[i];
+        }
+        /*если сумма всех ячеек не четная то сумма левой и правой стороны не может быть равны,
+        если сумма четная то можно попробовать найти баданс между левой и правой частью
+         */
+        System.out.println("Задание 6:");
+        if(chkEven%2 != 0) {
+            //возвращаем false
+            return false;
+        } else {
+            /*назначаем переменной sumLeft значение первой ячейки,
+            назначаем переменной sumRight значение последней ячейки
+             */
+            sumLeft = arr[left];
+            sumRight = arr[right];
+            /* пока переменная left меньше переменной right-1 перебираем массив arr,
+            двигаясь слева и справа к центру массива,
+            прибавляем к переменной SumLeft следующую ячейку слева если переменная SumLeft меньше SumRight,
+            прибавляем к переменной SumКшпре следующую ячейку справа если переменная SumRight меньше SumLeft
+             */
+            while (left < right-1){
+                if(sumLeft < sumRight) {
+                    left++;
+                    sumLeft += arr[left];
+                } else {
+                    right--;
+                    sumRight += arr[right];
+                }
+            }
+            /* если переменные SumRight и SumLeft равны то возвращаем true и выводим значения ячеек массива
+            с знаком || между левой и правой частью где был найден баланс,
+            в противвном случае возвращаем false
+             */
+            if(sumLeft == sumRight){
+                for (int i =0; i < arr.length; i++) {
+                    if(i != arr.length-1) {
+                        System.out.print(arr[i] + ", ");
+                    } else {
+                        System.out.print(arr[i]);
+                    }
+                    if(i == left) {
+                        System.out.print(" || ");
+                    }
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 }
