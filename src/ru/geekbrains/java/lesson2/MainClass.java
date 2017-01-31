@@ -15,7 +15,7 @@ public class MainClass {
         //создаем массив arr2 для использования его в методе rotateArr
         int arr2[] = {1, 2, 3, 4, 5, 6};
         //создаем переменную movestep для смещения позиций в массиве arr2
-        int movestep = -3;
+        int movestep = -2;
         //вызываем метод substituteArray
         substituteArray();
         //вызываем метод fillArray
