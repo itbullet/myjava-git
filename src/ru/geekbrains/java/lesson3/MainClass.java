@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class MainClass {
     public static void main(String[] args) {
-        int $your_tries = 3;
+        int $your_tries = 4;
         gameRounds($your_tries);
     }
 
