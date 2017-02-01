@@ -1,11 +1,14 @@
 package ru.geekbrains.java.lesson3;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import jdk.nashorn.internal.ir.WhileNode;
 
 import javax.sound.midi.Soundbank;
 import javax.sound.midi.SysexMessage;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 /**
  * Created by Eduard on 31.01.2017.
@@ -13,17 +16,52 @@ import java.util.Scanner;
 public class MainClass {
     public static void main(String[] args) {
         int $your_tries = 3; //колличество попыток
-        //gameRounds($your_tries);
+        gameNumberRounds($your_tries); //игра угадай число
+        guessWord(); //игра угадай слово
     }
 
     public static void guessWord() {
         //создаем массив слов из которых компьютер будет загадывать слова
-        String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry",
+        String[] $words = {"apple", "orange", "lemon", "banana", "apricot", "avocado", "broccoli", "carrot", "cherry",
                 "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", "pea", "peanut",
                 "pear", "pepper", "pineapple", "pumpkin", "potato"};
+        Random $rand = new Random(); //созадем объект класса Random
+        int $x = $rand.nextInt($words.length); //вызываем метод nextInt с числом равным длинне массива $words
+        String $hiddenword = $words[$x]; //присваиваем переменной слово на выбор мз массива
+        Scanner sc3 = new Scanner(System.in); //объявляем новый объект класса Scanner для ввода слова
+        //System.out.println($hiddenword); //печатае загаданное слово для проверки
+        System.out.println("Guess word from list: " + Arrays.toString($words)); // выводим сообщение и массив слов
+        String $answer = sc3.nextLine(); // считываем слова со сканера в переменную
+        while (true) { //запускаем бесконечный цикл
+            if ($answer.equals($hiddenword)) { //сравниваем загаданное слово и слово которое ввел пользователь
+                System.out.println("Вы угадали"); //выводим сообщение если угадали и прерываем бесконечный цикл
+                break;
+            } else { //если не угадали
+
+                char[] $answer_char = $answer.toCharArray(); //создаем массив с введенного пользователем слова
+                char[] $hiddenword_char = $hiddenword.toCharArray(); //создаем массив с загаданного компьютером слова
+                for (int i = 0; i < 15; i++) { //запускаем цикл из 15 шагов
+                    if (i < $answer_char.length && i < $hiddenword_char.length) { /*если переменная i меньше длинны слов заходим выполняем
+                    без этого условия в программе появляется ошибка при привышении переменной i размера массивов $answer_char и $hiddenword_char
+                    */
+                        if (($answer_char[i] == $hiddenword_char[i])) { //сравниваем буквы на местах
+                            System.out.print($answer_char[i]); //если буквы совпадают выводим эту букву
+                        } else {
+                            System.out.print("#"); //если буквы не совпадают на позиции то выводим символ #
+                        }
+                    } else { //если переменная i больше длины любого из слов остальные символы забиваем знаком #
+                        System.out.print("#");
+                    }
+                }
+            }
+            System.out.println(); //вызываем метод для перехода на новую строку в консоли
+            $answer = sc3.nextLine(); //вводим новое слово со сканера в переменную answer
+        }
+
     }
+
     //объявляем метод gameRounds, который будет отвечать за вызов игры, перезапуск раундов и окончание игры
-    public static void gameRounds(int $your_tries) {
+    public static void gameNumberRounds(int $your_tries) {
         guessNumber($your_tries); //вызываем игру
         Scanner sc2 = new Scanner(System.in); //объявляем объект класса Scanner
         //объявляем бесконечный цикл
@@ -38,6 +76,7 @@ public class MainClass {
             }
         }
     }
+
     //объявляем метод guessNumber, который отвечает за игру в угадывание чисел
     public static void guessNumber(int $try) {
         Random $rand = new Random(); //созадем объект класса Random
