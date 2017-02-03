@@ -18,21 +18,6 @@ public class MainClass {
         int $your_tries = 3; //колличество попыток
         gameNumberRounds($your_tries); //игра угадай число
         guessWord(); //игра угадай слово
-        print2DTable();
-    }
-
-    public static void print2DTable() {
-        for(int i = 0; i <= 15; i++) {
-            System.out.printf("%2d ", i);
-        }
-        System.out.println();
-        for (int i = 0; i <15; i++) {
-            System.out.printf("%2d ", i+1);
-            for (int j = 0; j < 15; j++) {
-                System.out.printf("%2s ", "*");
-            }
-            System.out.println();
-        }
     }
 
     public static void guessWord() {
