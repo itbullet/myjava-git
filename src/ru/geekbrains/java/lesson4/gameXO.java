@@ -8,8 +8,8 @@ import java.util.Scanner;
  */
 public class gameXO {
     public static char[][] map;
-    public static final int SIZE = 3;
-    public static final int DOTS_TO_WIN = 3;
+    public static final int SIZE = 10;
+    public static final int DOTS_TO_WIN = 4;
     public static final char DOT_EMPTY = '\u2022';
     public static final char DOT_X = 'X';
     public static final char DOT_O = 'O';
@@ -23,7 +23,7 @@ public class gameXO {
         while (true){
             humanTurn();
             printMap();
-            if(checkWin0(DOT_X)){
+            if(checkWin(DOT_X)){
                 System.out.println("Победил человек");
                 break;
             }
@@ -33,7 +33,7 @@ public class gameXO {
             }
             aiTurn();
             printMap();
-            if(checkWin0(DOT_O)){
+            if(checkWin(DOT_O)){
                 System.out.println("Победил компьютер");
                 break;
             }
@@ -56,13 +56,13 @@ public class gameXO {
 
     public static void printMap() {
         for (int i = 0; i <= SIZE; i++) {
-            System.out.print(i + " ");
+            System.out.printf("%2d ",i);
         }
         System.out.println();
         for (int i = 0; i < SIZE; i++) {
-            System.out.print((i + 1) + " ");
+            System.out.printf("%2d ",(i + 1));
             for (int j = 0; j < SIZE; j++) {
-                System.out.print(map[i][j] + " ");
+                System.out.printf("%2c ",map[i][j]);
             }
             System.out.println();
         }
@@ -99,7 +99,8 @@ public class gameXO {
         map[y][x] = DOT_O;
     }
 
-    public static boolean checkWin0 (char symb) {
+    public static boolean checkWin (char symb) {
+        /*
         if (map[0][0]==symb&&map[0][1]==symb&&map[0][2]==symb) {
             return true;
         }
@@ -125,9 +126,37 @@ public class gameXO {
         }
         if (map[2][0]==symb&&map[1][1]==symb&&map[0][2]==symb) {
             return true;
-        }
+        }*/
 
+        for (int i=0; i< SIZE; i++){
+            for (int j=0; j<SIZE; j++){
+                if(checkLine(i,j,1,0,symb)){
+                    return true;
+                }
+                if(checkLine(i,j,0,1,symb)){
+                    return true;
+                }
+                if(checkLine(i,j,1,1,symb)){
+                    return true;
+                }
+                if(checkLine(i,j,1,-1,symb)){
+                    return true;
+                }
+            }
+        }
         return false;
+    }
+
+    public static boolean checkLine(int cx, int cy, int vx, int vy, char symb) {
+        if(cx+DOTS_TO_WIN*vx>SIZE||cy+DOTS_TO_WIN*vy>SIZE||cy+DOTS_TO_WIN*vy<-1){
+            return false;
+        }
+        for(int i=0; i< DOTS_TO_WIN; i++){
+            if(map[cy+i*vy][cx+i*vx]!=symb){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean isMapFull(){
