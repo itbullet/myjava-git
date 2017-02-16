@@ -5,24 +5,26 @@ package ru.geekbrains.java.test.PoolPuzzleOne;
  */
 public class PoolPuzzleOne {
     public static void main(String[] args) {
-        while() {
-            int x = 0;
-            System.out.print("a ");
-            if (x < 1) {
-                System.out.print(" oyster ");
-            }
+        int x = 0;
 
-            if () {
-                System.out.print("noise");
+        while (x < 4) {
+            System.out.print("a");
+            if (x < 1) {
+                System.out.print(" ");
+            }
+            System.out.print("n");
+            if (x > 1) {
+                System.out.print(" oyster");
+                x = x + 2;
             }
             if (x == 1) {
-                System.out.print("annoys");
+                System.out.print("noys");
             }
-            if () {
-                System.out.print("an");
+            if (x < 1) {
+                System.out.print("oise ");
             }
             System.out.println("");
+            x = x + 1;
         }
-
     }
 }
