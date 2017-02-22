@@ -1,4 +1,4 @@
-package ru.geekbrains.java.test.work1;
+package ru.geekbrains.java1.test.work1;
 
 /**
  * Created by Eduard on 03.02.2017.

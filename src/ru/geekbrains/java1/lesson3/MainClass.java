@@ -1,14 +1,8 @@
-package ru.geekbrains.java.lesson3;
+package ru.geekbrains.java1.lesson3;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import jdk.nashorn.internal.ir.WhileNode;
-
-import javax.sound.midi.Soundbank;
-import javax.sound.midi.SysexMessage;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.StringJoiner;
 
 /**
  * Created by Eduard on 31.01.2017.

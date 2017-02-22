@@ -1,4 +1,4 @@
-package ru.geekbrains.java.headFirstJava.work1;
+package ru.geekbrains.java1.headFirstJava.work1;
 
 /**
  * Created by Eduard on 11.02.2017.

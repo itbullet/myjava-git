@@ -1,4 +1,4 @@
-package ru.geekbrains.java.lesson1;
+package ru.geekbrains.java1.lesson1;
 
 /**
  * Created by esa on 24.01.2017.

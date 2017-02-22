@@ -1,4 +1,4 @@
-package ru.geekbrains.java.test.work2;
+package ru.geekbrains.java1.test.work2;
 
 import java.util.Arrays;
 

@@ -1,6 +1,4 @@
-package ru.geekbrains.java.lesson6;
-
-import java.util.Random;
+package ru.geekbrains.java1.lesson6;
 
 /**
  * Created by Eduard on 10.02.2017.

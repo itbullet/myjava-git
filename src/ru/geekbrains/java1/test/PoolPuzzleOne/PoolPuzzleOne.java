@@ -1,4 +1,4 @@
-package ru.geekbrains.java.test.PoolPuzzleOne;
+package ru.geekbrains.java1.test.PoolPuzzleOne;
 
 /**
  * Created by Eduard on 15.02.2017.

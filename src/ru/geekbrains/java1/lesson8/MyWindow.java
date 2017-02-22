@@ -1,6 +1,4 @@
-package ru.geekbrains.java.lesson8;
-
-import com.sun.org.apache.xpath.internal.SourceTree;
+package ru.geekbrains.java1.lesson8;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

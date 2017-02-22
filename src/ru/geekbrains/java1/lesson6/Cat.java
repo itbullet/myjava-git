@@ -1,4 +1,4 @@
-package ru.geekbrains.java.lesson6;
+package ru.geekbrains.java1.lesson6;
 
 import java.util.Random;
 

@@ -1,7 +1,4 @@
-package ru.geekbrains.java.lesson2;
-
-import com.sun.org.apache.xpath.internal.SourceTree;
-import sun.plugin.javascript.navig.Array;
+package ru.geekbrains.java1.lesson2;
 
 import java.util.Arrays;
 
