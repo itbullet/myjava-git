@@ -11,7 +11,6 @@ public class Water extends Obstacle {
     public Water(int dist) {
         this.dist = dist;
     }
-
     @Override
     public void doIt(Competitor competitor) {
         competitor.swim(dist);

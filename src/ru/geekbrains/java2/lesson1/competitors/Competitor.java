@@ -9,4 +9,5 @@ public interface Competitor {
     void jump(int height);
     void result();
     boolean isOnDistance();
+    void info();
 }

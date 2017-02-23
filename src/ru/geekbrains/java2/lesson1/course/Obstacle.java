@@ -1,6 +1,7 @@
 package ru.geekbrains.java2.lesson1.course;
 
 import ru.geekbrains.java2.lesson1.competitors.Competitor;
+import ru.geekbrains.java2.lesson1.competitors.Team;
 
 /**
  * Created by Eduard on 22.02.2017.

@@ -66,4 +66,9 @@ public abstract class Animal implements Competitor {
     public void result() {
         System.out.println(type + " " + name + ": " + onDistance);
     }
+
+    @Override
+    public void info() {
+        System.out.println(type + " " + name);
+    }
 }
