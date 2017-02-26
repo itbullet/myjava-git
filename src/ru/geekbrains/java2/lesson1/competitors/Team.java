@@ -20,6 +20,7 @@ public class Team {
     }
 
     public void showResults() {
+        System.out.println("====================");
         for (Competitor o: competitors) {
             o.result();
         }
