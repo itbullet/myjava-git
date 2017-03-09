@@ -26,6 +26,7 @@ public class myChatWindow extends JFrame{
         add(jBottom, BorderLayout.SOUTH);
         jta = new JTextArea();
         jta.setEditable(false);
+        jta.setLineWrap(true);
         JScrollPane jsp = new JScrollPane(jta);
         add(jsp, BorderLayout.CENTER);
 
@@ -33,6 +34,7 @@ public class myChatWindow extends JFrame{
         jtf.addActionListener(e -> sendMsg());
 
         setVisible(true);
+        jtf.grabFocus();
     }
 
     public void sendMsg(){
