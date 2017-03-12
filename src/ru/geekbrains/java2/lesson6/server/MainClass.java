@@ -1,7 +1,9 @@
-package ru.geekbrains.java2.lesson6;
+package ru.geekbrains.java2.lesson6.server;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -20,13 +22,14 @@ public class MainClass {
             System.out.println("Сервер ожидает подключения");
             socket = serverSocket.accept();
             System.out.println("Клиент подключился");
-            Scanner sc = new Scanner(socket.getInputStream());
-            PrintWriter pw = new PrintWriter(socket.getOutputStream());
+            DataInputStream in = new DataInputStream(socket.getInputStream());
+            DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             while (true) {
-                String str = sc.nextLine();
+                String str = in.readUTF();
+                System.out.println(str);
                 if (str.equals("end")) break;
-                pw.println("echo: " + str);
-                pw.flush();
+                out.writeUTF("echo: " + str);
+                out.flush();
             }
         } catch (IOException e) {
             e.printStackTrace();
