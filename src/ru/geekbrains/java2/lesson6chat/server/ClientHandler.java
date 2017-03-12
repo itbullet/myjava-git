@@ -1,4 +1,4 @@
-package ru.geekbrains.server;
+package ru.geekbrains.java2.lesson6chat.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -20,7 +20,9 @@ public class ClientHandler {
                     while (true) {
                         String str = in.readUTF();
                         System.out.println("from client: " + str);
-                        if (str.equals("end")) break;
+                        if (str.equals("end")) {
+                            break;
+                        }
                         sendMsg("echo: " + str);
                     }
                 } catch (IOException e) {

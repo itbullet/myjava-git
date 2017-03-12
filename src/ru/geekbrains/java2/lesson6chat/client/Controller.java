@@ -1,4 +1,4 @@
-package ru.geekbrains.client;
+package ru.geekbrains.java2.lesson6chat.client;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;

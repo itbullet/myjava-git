@@ -1,4 +1,4 @@
-package ru.geekbrains.server;
+package ru.geekbrains.java2.lesson6chat.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
