@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.PasswordField?>
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.geekbrains.client.Controller">
+    <Label text="Чат комната: root">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font></Label>
+    <HBox fx:id="upperPanel">
+        <TextField fx:id="loginField" promptText="Логин"/>
+        <PasswordField fx:id="passField" promptText="Пароль"/>
+        <Button fx:id="btnAuth" text="Авторизоваться" onAction="#onAuthClick"/>
+    </HBox>
+    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false" />
+    <HBox visible="false" fx:id="bottomPanel">
+        <TextField fx:id="textField" HBox.hgrow="ALWAYS" onAction="#onSendMsg"/>
+        <Button text="Send Msg" onAction="#onSendMsg"/>
+    </HBox>
+</VBox>
