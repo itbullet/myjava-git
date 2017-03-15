@@ -1,4 +1,4 @@
-package ru.geekbrains.server;
+package ru.geekbrains.java2.lesson7.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,7 +14,7 @@ public class MyServer {
         return authService;
     }
 
-    private final int PORT = 8189;
+    private final int PORT = 8190;
 
     public MyServer() {
         try {

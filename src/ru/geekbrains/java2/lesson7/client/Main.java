@@ -1,4 +1,4 @@
-package ru.geekbrains.client;
+package ru.geekbrains.java2.lesson7.client;
 
 import javafx.application.Application;
 import javafx.application.Platform;

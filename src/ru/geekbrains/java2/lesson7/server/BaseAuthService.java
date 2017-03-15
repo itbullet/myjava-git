@@ -1,4 +1,4 @@
-package ru.geekbrains.server;
+package ru.geekbrains.java2.lesson7.server;
 
 import java.util.ArrayList;
 import java.util.Map;

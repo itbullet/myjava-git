@@ -1,4 +1,4 @@
-package ru.geekbrains.client;
+package ru.geekbrains.java2.lesson7.client;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -53,7 +53,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            socket = new Socket("localhost", 8189);
+            socket = new Socket("localhost", 8190);
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
             setAuthorized(false);

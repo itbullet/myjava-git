@@ -1,4 +1,4 @@
-package ru.geekbrains.server;
+package ru.geekbrains.java2.lesson7.server;
 
 import java.sql.*;
 
@@ -11,6 +11,7 @@ public class DBAuthService implements AuthService {
             Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection("jdbc:sqlite:chat.db");
             ps = connection.prepareStatement("SELECT Nick FROM entries WHERE Login = ? AND Pass = ?;");
+            System.out.println("Connected");
         } catch (Exception e) {
             e.printStackTrace();
         }

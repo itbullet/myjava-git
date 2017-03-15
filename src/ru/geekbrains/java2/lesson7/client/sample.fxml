@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.PasswordField?>
-<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.geekbrains.client.Controller">
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="ru.geekbrains.java2.lesson7.client.Controller">
     <Label text="Чат комната: root">
       <font>
          <Font name="System Bold" size="20.0" />
