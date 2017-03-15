@@ -24,6 +24,7 @@ public class MainClass {
             System.out.println("Клиент подключился");
             DataInputStream in = new DataInputStream(socket.getInputStream());
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+            Scanner sc = new Scanner(System.in);
             while (true) {
                 String str = in.readUTF();
                 System.out.println(str);
@@ -41,4 +42,5 @@ public class MainClass {
             }
         }
     }
+
 }

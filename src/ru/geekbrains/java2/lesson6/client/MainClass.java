@@ -19,7 +19,7 @@ public class MainClass {
                 out.writeUTF(str);
                 if (str.equals("end")) break;
                 System.out.println("from server: " + in.readUTF());
-                //out.flush();
+                out.flush();//можно удалить
             }
 
         } catch (Exception e) {
